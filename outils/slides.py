@@ -113,7 +113,7 @@ if __name__ == "__main__":
     spec = json.load(open(sys.argv[1]))
     for s in spec:
         if s["type"] == "cover":
-            cover(s["kind"], s["title"], s["highlight"], s[os.path.join(os.path.dirname(os.path.abspath(sys.argv[1])), s["out"]))
+            cover(s["kind"], s["title"], s["highlight"], os.path.join(os.path.dirname(os.path.abspath(sys.argv[1])), s["out"]))
         else:
             text_slide(s["kind"], s["heading"], s["body"], os.path.join(os.path.dirname(os.path.abspath(sys.argv[1])), s["out"]), s.get("closing"))
     print("ok")
